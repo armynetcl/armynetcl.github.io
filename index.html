@@ -1,389 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Armynet | Soluciones tecnológicas</title>
-    <meta name="description" content="Armynet ofrece servicios de infraestructura IT, ciberseguridad y desarrollo web para empresas. Seguridad, innovación y confianza.">
-    <meta name="keywords" content="tecnología, ciberseguridad, desarrollo web, hosting, redes, Armynet">
-    <meta name="author" content="Armynet">
-    <!-- Favicon opcional: puedes agregar después un ícono -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9fc;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: #0a2b3e;
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-        .logo p {
-            font-size: 0.8rem;
-            color: #9ec8e0;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #f0b429;
-        }
-
-        /* Botón contacto */
-        .btn {
-            display: inline-block;
-            background: #f0b429;
-            color: #0a2b3e;
-            padding: 0.7rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #e0a020;
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, #0a2b3e 0%, #1c4e6e 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-        /* Secciones generales */
-        section {
-            padding: 4rem 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2.5rem;
-            color: #0a2b3e;
-            position: relative;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: #f0b429;
-            margin: 0.5rem auto 0;
-        }
-
-        /* Servicios (cards) */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .service-icon {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        .service-card h3 {
-            margin-bottom: 0.8rem;
-            color: #0a2b3e;
-        }
-
-        /* Sobre nosotros */
-        .about {
-            background: #eef2f7;
-        }
-        .about-content {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .about-text {
-            flex: 1;
-        }
-        .about-text p {
-            margin-bottom: 1rem;
-        }
-        .about-stats {
-            flex: 1;
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .stat {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            min-width: 120px;
-        }
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #f0b429;
-        }
-
-        /* Contacto */
-        .contact-form {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        button {
-            background: #0a2b3e;
-            color: white;
-            border: none;
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background: #1c4e6e;
-        }
-
-        /* Footer */
-        footer {
-            background: #0a2b3e;
-            color: #ccc;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        footer a {
-            color: #f0b429;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-flex {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            .about-content {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ArmyNet — Soluciones TI, Ciberseguridad, Redes, CCTV y más. +20 años de experiencia en Santiago, Chile. Tecnología que trabaja para ti.">
+  <title>ArmyNet | Tecnología que trabaja para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="bg-grid">
 
-<header>
-    <div class="container header-flex">
-        <div class="logo">
-            <h1>ARMYNET</h1>
-            <p>Innovación y seguridad digital</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <!-- Para cambiar el logo: reemplaza img/logo.jpg por tu imagen -->
+      <img id="logoImg" src="img/logo.jpg" alt="ArmyNet Logo">
+      <span>ARMY<span class="accent">NET</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20ArmyNet." class="btn btn-wa btn-sm nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
-</header>
+    <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-<main>
-    <section id="inicio" class="hero">
-        <div class="container">
-            <h2>Soluciones tecnológicas para tu empresa</h2>
-            <p>En Armynet conectamos la innovación con la seguridad. Ofrecemos infraestructura IT, ciberseguridad y desarrollo web a medida.</p>
-            <a href="#contacto" class="btn">Solicitar información</a>
-        </div>
-    </section>
+<!-- FLOATING WA -->
+<a id="wa-float" href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n." target="_blank" title="Escríbenos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-    <section id="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Ciberseguridad</h3>
-                    <p>Protegemos tu infraestructura con auditorías, firewalls y monitoreo 24/7.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3>Infraestructura IT</h3>
-                    <p>Servidores, redes y cloud computing con alta disponibilidad.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Desarrollo web</h3>
-                    <p>Sitios web, tiendas online y aplicaciones a medida, optimizadas y seguras.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Consultoría TI</h3>
-                    <p>Asesoramiento estratégico para la transformación digital de tu negocio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero bg-gradient">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">+20 años de experiencia &middot; Santiago y Regiones</div>
+      <h1>Tecnología que <span class="accent">trabaja para ti</span></h1>
+      <p class="subtitle">Soluciones TI integrales para empresas y PYMES: redes, ciberseguridad, CCTV, soporte técnico y más. Protege y potencia tu negocio con especialistas certificados.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20sin%20costo." target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Cotiza hoy sin costo</a>
+        <a href="servicios.html" class="btn btn-outline">Ver servicios <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="num" data-count="20" data-suffix="+">0+</div><div class="label">Años de experiencia</div></div>
+        <div class="stat-item"><div class="num" data-count="7" data-suffix="">0</div><div class="label">Áreas de servicio</div></div>
+        <div class="stat-item"><div class="num" data-count="100" data-suffix="%">0%</div><div class="label">Garantía en cada trabajo</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- decorative svg -->
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><circle cx="250" cy="250" r="240" fill="none" stroke="#0A66C2" stroke-width="1"/><circle cx="250" cy="250" r="180" fill="none" stroke="#0A66C2" stroke-width="1"/><circle cx="250" cy="250" r="120" fill="none" stroke="#0A66C2" stroke-width="1"/><line x1="10" y1="250" x2="490" y2="250" stroke="#0A66C2" stroke-width=".5"/><line x1="250" y1="10" x2="250" y2="490" stroke="#0A66C2" stroke-width=".5"/><circle cx="250" cy="70" r="6" fill="#0A66C2"/><circle cx="430" cy="250" r="6" fill="#0A66C2"/><circle cx="250" cy="430" r="6" fill="#0A66C2"/><circle cx="70" cy="250" r="6" fill="#0A66C2"/></svg>
+  </div>
+</section>
 
-    <section id="nosotros" class="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Armynet</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Somos un equipo de expertos en tecnología con más de 10 años de experiencia en el sector. Nuestra misión es brindar soluciones robustas, escalables y seguras para empresas de todos los tamaños.</p>
-                    <p>En Armynet creemos que la tecnología debe ser un aliado, no una preocupación. Por eso trabajamos con los estándares más altos de calidad y confianza.</p>
-                    <p>📍 Chile | 🌎 Presencia internacional</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <div class="stat-number">10+</div>
-                        <div>años de experiencia</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">150+</div>
-                        <div>proyectos exitosos</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">98%</div>
-                        <div>clientes satisfechos</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- SERVICIOS DESTACADOS -->
+<section>
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Nuestros Servicios</div>
+      <h2>Todo lo que tu empresa <span class="accent">necesita</span></h2>
+      <p>Desde mantención de equipos hasta ciberseguridad avanzada. Soluciones a medida, garantizadas.</p>
+    </div>
+    <div class="grid-3 fade-up">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="card-tag">Ciberseguridad</div>
+        <h3>Protege tu empresa</h3>
+        <p>Pentesting, análisis de vulnerabilidades y auditoría de redes. Certificados en Hacking Ético y Fortinet NSE.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="card-tag">Redes e Infraestructura</div>
+        <h3>Conectividad total</h3>
+        <p>Fibra óptica, cableado estructurado Cat6, Wi-Fi corporativo, racks y equipamiento activo de red.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-camera"></i></div>
+        <div class="card-tag">CCTV & Domótica</div>
+        <h3>Seguridad física</h3>
+        <p>Cámaras IP, alarmas y automatización del hogar o negocio. Monitoreo remoto 24/7 desde tu smartphone.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-tools"></i></div>
+        <div class="card-tag">Mantención TI</div>
+        <h3>Soporte técnico</h3>
+        <p>Diagnóstico, reparación y mantención de PC, notebooks y celulares. Garantía real en cada servicio.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-video"></i></div>
+        <div class="card-tag">Audiovisual</div>
+        <h3>Contenido profesional</h3>
+        <p>Videos comerciales, fotografía y tomas aéreas con drone. Producción completa para tu empresa o PYME.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-globe"></i></div>
+        <div class="card-tag">Diseño Web</div>
+        <h3>Presencia digital</h3>
+        <p>Sitios web corporativos, landing pages y material para redes sociales. Diseño que convierte visitas en clientes.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="fade-up">
+      <a href="servicios.html" class="btn btn-primary">Ver todos los servicios <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
 
-    <section id="contacto">
-        <div class="container">
-            <h2 class="section-title">Contáctanos</h2>
-            <div class="contact-form">
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono (opcional)</label>
-                        <input type="tel" id="telefono" name="telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                    </div>
-                    <button type="submit">Enviar mensaje</button>
-                </form>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem;">📧 También escríbenos a <a href="mailto:contacto@armynet.cl">contacto@armynet.cl</a></p>
-            </div>
-        </div>
-    </section>
-</main>
+<!-- POR QUÉ ELEGIRNOS -->
+<section style="background:var(--dark2)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Por qué ArmyNet</div>
+      <h2>Razones para <span class="accent">elegirnos</span></h2>
+    </div>
+    <div class="why-grid fade-up">
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-star"></i></div>
+        <div><h4>Experiencia real</h4><p>+20 años trabajando en TI, telecomunicaciones y ciberseguridad en empresas y PYMES.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-certificate"></i></div>
+        <div><h4>Certificaciones</h4><p>Hacking Ético Profesional, Fortinet NSE 1 &amp; 2, Técnico en Ciberseguridad.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-sliders"></i></div>
+        <div><h4>Soluciones a medida</h4><p>Escuchamos tus necesidades y proponemos la solución más adecuada para tu caso.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-shield-check"></i></div>
+        <div><h4>Garantía en todo</h4><p>Respaldamos cada trabajo con garantía real. Ningún proyecto queda a medias.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-user-headset"></i></div>
+        <div><h4>Atención personalizada</h4><p>Trato directo con el especialista. Sin intermediarios, sin call centers.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-tag"></i></div>
+        <div><h4>Precio justo</h4><p>Calidad profesional accesible para personas y PYMES. Cotización sin costo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- CERTIFICACIONES -->
+<section class="cert-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Certificaciones</div>
+      <h2>Expertise <span class="accent">certificado</span></h2>
+    </div>
+    <div class="cert-badges fade-up">
+      <div class="cert-badge"><i class="fas fa-user-secret"></i> Hacking Ético Profesional</div>
+      <div class="cert-badge"><i class="fas fa-fire-flame-curved"></i> Fortinet NSE 1 &amp; NSE 2</div>
+      <div class="cert-badge"><i class="fas fa-shield-halved"></i> Técnico en Ciberseguridad</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container fade-up">
+    <h2>¿Listo para <span class="accent">proteger tu negocio</span>?</h2>
+    <p>Escríbenos hoy y recibe una evaluación sin costo. Te respondemos en menos de 24h.</p>
+    <div class="btns">
+      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20una%20evaluaci%C3%B3n%20gratuita." target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Hablemos por WhatsApp</a>
+      <a href="contacto.html" class="btn btn-outline">Ver contacto</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <div class="container">
-        <p>&copy; 2025 Armynet - Todos los derechos reservados.</p>
-        <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
-        <p>Hecho con ❤️ en Chile</p>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="img/logo.jpg" alt="ArmyNet">
+          <span>ARMY<span class="accent">NET</span></span>
+        </div>
+        <p class="footer-desc">Soluciones TI integrales para empresas y PYMES. Tecnología que trabaja para ti.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="servicios.html#mantencion">Mantención TI</a></li>
+          <li><a href="servicios.html#redes">Redes e Infraestructura</a></li>
+          <li><a href="servicios.html#ciberseguridad">Ciberseguridad</a></li>
+          <li><a href="servicios.html#cctv">CCTV &amp; Domótica</a></li>
+          <li><a href="servicios.html#audiovisual">Audiovisual</a></li>
+          <li><a href="servicios.html#web">Diseño Web</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/56985111137" target="_blank"><i class="fab fa-whatsapp"></i> +56 9 8511 1137</a></li>
+          <li><a href="mailto:contacto@armynet.cl"><i class="fas fa-envelope"></i> contacto@armynet.cl</a></li>
+          <li><a><i class="fas fa-location-dot"></i> Santiago, Chile</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 ArmyNet. Todos los derechos reservados.</span>
+      <div class="social-links">
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/56985111137" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<!-- Pequeño script para el envío del formulario (solo alerta demostrativa) -->
-<script>
-    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Gracias por contactarte con Armynet. Te responderemos a la brevedad.');
-        this.reset();
-    });
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
