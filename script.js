@@ -32,10 +32,10 @@ function animateCount(el) {
   const target = parseInt(el.dataset.count);
   const suffix = el.dataset.suffix || '';
   let current = 0;
-  const step = Math.ceil(target / 40);
+  const step = Math.max(1, Math.ceil(target / 40));
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
-    el.textContent = (current < 10 && target < 10 ? '' : '') + current + suffix;
+    el.textContent = current + suffix;
     if (current >= target) clearInterval(timer);
   }, 40);
 }
@@ -48,3 +48,39 @@ const statsObserver = new IntersectionObserver(entries => {
   });
 });
 document.querySelectorAll('.hero-stats').forEach(el => statsObserver.observe(el));
+
+// Contact form (Web3Forms)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const status = document.getElementById('formStatus');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.className = 'form-status';
+    status.textContent = '';
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        status.className = 'form-status success';
+        status.textContent = '¡Mensaje enviado! Te responderemos en menos de 24h hábiles.';
+        contactForm.reset();
+      } else {
+        throw new Error(data.message || 'Error al enviar');
+      }
+    } catch (err) {
+      status.className = 'form-status error';
+      status.textContent = 'Hubo un problema al enviar. Por favor escríbenos por WhatsApp o intenta nuevamente.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  });
+}

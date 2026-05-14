@@ -3,19 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Contacta a ArmyNet por WhatsApp o correo. Evaluación gratuita. Respondemos en menos de 24h. Santiago, Chile.">
+  <meta name="description" content="Contacta a ArmyNet. Formulario directo, WhatsApp o correo. Evaluación gratuita. Respondemos en menos de 24h. Santiago, Chile.">
   <title>Contacto | ArmyNet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .response-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25D366;padding:.4rem 1rem;border-radius:20px;font-size:.85rem;font-weight:600;margin-bottom:2rem}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem}
-    @media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
-  </style>
 </head>
-<body class="bg-grid">
+<body>
 
 <nav id="navbar">
   <div class="container nav-inner">
@@ -28,7 +23,7 @@
       <a href="servicios.html">Servicios</a>
       <a href="proyectos.html">Proyectos</a>
       <a href="contacto.html">Contacto</a>
-      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n." class="btn btn-wa btn-sm nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="contacto.html" class="nav-cta">Cotización gratis</a>
     </div>
     <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
@@ -37,37 +32,104 @@
 <a id="wa-float" href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n." target="_blank" title="Escríbenos"><i class="fab fa-whatsapp"></i></a>
 
 <div class="page-hero">
-  <div class="container" style="position:relative;z-index:1">
+  <div class="container">
     <div class="tag">Hablemos</div>
     <h1>Contáctanos <span class="accent">hoy</span></h1>
-    <p>Sin formularios. Escríbenos directamente y te respondemos en menos de 24h.</p>
+    <p>Cuéntanos qué necesitas y te respondemos en menos de 24h hábiles.</p>
   </div>
 </div>
 
+<!-- FORMULARIO + INFO -->
 <section>
   <div class="container">
-    <div style="text-align:center;margin-bottom:3rem" class="fade-up">
-      <div class="response-badge"><i class="fas fa-clock"></i> Respuesta garantizada en menos de 24h hábiles</div>
-    </div>
+    <div class="grid-2 fade-up" style="gap:3rem;align-items:flex-start">
 
-    <div class="contact-grid fade-up">
-      <!-- WhatsApp -->
-      <div class="contact-card">
-        <div class="contact-icon wa-icon"><i class="fab fa-whatsapp"></i></div>
-        <h3>WhatsApp</h3>
-        <p>La forma más rápida de contactarnos. Escríbenos y te respondemos de inmediato. Cotizaciones, consultas y soporte.</p>
-        <a href="tel:+56985111137" style="color:var(--text-muted);font-size:.9rem;display:block;margin-bottom:1.5rem">+56 9 8511 1137</a>
-        <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20ArmyNet." target="_blank" class="btn btn-wa" style="width:100%;justify-content:center"><i class="fab fa-whatsapp"></i> Escríbenos ahora</a>
+      <!-- Formulario -->
+      <div class="contact-form-wrapper">
+        <h3>Envíanos un mensaje</h3>
+        <p class="form-sub">Completa el formulario y te contactaremos a la brevedad. Cotización sin costo, sin compromiso.</p>
+
+        <form id="contactForm" class="contact-form">
+          <!-- Web3Forms access key (reemplazar por tu key real desde web3forms.com) -->
+          <input type="hidden" name="access_key" value="177df6d7-18e4-439f-a083-e5463bbce2dd">
+          <input type="hidden" name="subject" value="Nuevo mensaje desde ArmyNet.cl">
+          <input type="hidden" name="from_name" value="Web ArmyNet">
+          <!-- Honeypot anti-spam -->
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nombre completo *</label>
+              <input type="text" id="name" name="name" required placeholder="Juan Pérez">
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required placeholder="juan@empresa.cl">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="+56 9 1234 5678">
+            </div>
+            <div class="form-group">
+              <label for="service">Servicio de interés</label>
+              <select id="service" name="service">
+                <option value="">Selecciona una opción</option>
+                <option value="Mantención TI">Mantención TI</option>
+                <option value="Redes e Infraestructura">Redes e Infraestructura</option>
+                <option value="Ciberseguridad">Ciberseguridad</option>
+                <option value="CCTV y Alarmas">CCTV y Alarmas</option>
+                <option value="Armado de PC">Armado de PC</option>
+                <option value="Audiovisual">Audiovisual</option>
+                <option value="Diseño Web">Diseño Web</option>
+                <option value="Otro">Otro / Consulta general</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje *</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+          <div id="formStatus" class="form-status"></div>
+          <div class="form-note">Te responderemos en menos de 24h hábiles · Tus datos no se comparten con terceros.</div>
+        </form>
       </div>
 
-      <!-- Email -->
-      <div class="contact-card">
-        <div class="contact-icon mail-icon"><i class="fas fa-envelope"></i></div>
-        <h3>Correo Electrónico</h3>
-        <p>Para consultas formales, solicitudes de presupuesto o proyectos que requieren documentación. Te respondemos el mismo día hábil.</p>
-        <a href="mailto:contacto@armynet.cl" style="color:var(--text-muted);font-size:.9rem;display:block;margin-bottom:1.5rem">contacto@armynet.cl</a>
-        <a href="mailto:contacto@armynet.cl?subject=Consulta%20de%20servicios%20ArmyNet&body=Hola%2C%20quiero%20informaci%C3%B3n%20sobre..." class="btn btn-primary" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Enviar correo</a>
+      <!-- Información de contacto -->
+      <div>
+        <h2 style="margin-bottom:1rem">Otras formas de <span class="accent">contactarnos</span></h2>
+        <p style="color:var(--gray-700);margin-bottom:2rem">Si prefieres comunicación directa, también estamos disponibles por estos canales:</p>
+
+        <div class="contact-card" style="text-align:left;margin-bottom:1.25rem;padding:1.75rem">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem">
+            <div class="contact-icon wa-icon" style="margin:0;width:50px;height:50px;font-size:1.4rem"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4 style="margin:0">WhatsApp</h4>
+              <a href="tel:+56985111137" style="color:var(--gray-500);font-size:.9rem">+56 9 8511 1137</a>
+            </div>
+          </div>
+          <p style="margin-bottom:1rem;font-size:.92rem">La forma más rápida — respondemos de inmediato.</p>
+          <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20ArmyNet." target="_blank" class="btn btn-wa btn-sm" style="width:100%"><i class="fab fa-whatsapp"></i> Abrir WhatsApp</a>
+        </div>
+
+        <div class="contact-card" style="text-align:left;padding:1.75rem">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem">
+            <div class="contact-icon mail-icon" style="margin:0;width:50px;height:50px;font-size:1.4rem"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4 style="margin:0">Correo Electrónico</h4>
+              <a href="mailto:contacto@armynet.cl" style="color:var(--gray-500);font-size:.9rem">contacto@armynet.cl</a>
+            </div>
+          </div>
+          <p style="margin-bottom:1rem;font-size:.92rem">Para consultas formales o solicitudes con documentación.</p>
+          <a href="mailto:contacto@armynet.cl?subject=Consulta%20ArmyNet" class="btn btn-outline btn-sm" style="width:100%"><i class="fas fa-paper-plane"></i> Enviar correo</a>
+        </div>
       </div>
+
     </div>
 
     <!-- Info strip -->
@@ -82,46 +144,12 @@
       </div>
       <div class="info-item">
         <i class="fas fa-clock"></i>
-        <div><span>Horario de atención</span><strong>Lun – Sáb 9:00 – 19:00</strong></div>
+        <div><span>Horario</span><strong>Lun – Sáb · 9:00 – 19:00</strong></div>
       </div>
       <div class="info-item">
         <i class="fas fa-tag"></i>
         <div><span>Cotización</span><strong>Sin costo</strong></div>
       </div>
-    </div>
-
-    <!-- Mensaje de confianza -->
-    <div style="text-align:center;margin-top:4rem;max-width:600px;margin-left:auto;margin-right:auto" class="fade-up">
-      <h2 style="margin-bottom:1rem">¿Primera vez que nos contactas?</h2>
-      <p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:2rem">Sin problema. Cuéntanos qué necesitas y hacemos un diagnóstico inicial <strong style="color:var(--white)">completamente gratis</strong>. Sin compromiso, sin letra chica.</p>
-      <a href="https://wa.me/56985111137?text=Hola%2C%20es%20la%20primera%20vez%20que%20los%20contacto.%20Quiero%20una%20evaluaci%C3%B3n%20gratuita." target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Pedir evaluación gratuita</a>
-    </div>
-  </div>
-</section>
-
-<!-- Servicios rápidos CTA -->
-<section style="background:var(--dark2);padding:3rem 0">
-  <div class="container">
-    <div class="section-header fade-up" style="margin-bottom:2rem">
-      <h3>¿Qué necesitas? Escríbenos directo:</h3>
-    </div>
-    <div class="grid-4 fade-up">
-      <a href="https://wa.me/56985111137?text=Hola%2C%20necesito%20soporte%20t%C3%A9cnico%20urgente." target="_blank" class="service-card" style="text-align:center;cursor:pointer">
-        <div class="service-icon" style="margin:0 auto 1rem"><i class="fas fa-tools"></i></div>
-        <h4 style="font-size:1rem">Soporte Técnico</h4>
-      </a>
-      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20una%20evaluaci%C3%B3n%20de%20ciberseguridad." target="_blank" class="service-card" style="text-align:center;cursor:pointer">
-        <div class="service-icon" style="margin:0 auto 1rem"><i class="fas fa-shield-halved"></i></div>
-        <h4 style="font-size:1rem">Ciberseguridad</h4>
-      </a>
-      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20instalar%20CCTV%20o%20c%C3%A1maras." target="_blank" class="service-card" style="text-align:center;cursor:pointer">
-        <div class="service-icon" style="margin:0 auto 1rem"><i class="fas fa-camera"></i></div>
-        <h4 style="font-size:1rem">CCTV &amp; Alarmas</h4>
-      </a>
-      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20cotizar%20un%20sitio%20web." target="_blank" class="service-card" style="text-align:center;cursor:pointer">
-        <div class="service-icon" style="margin:0 auto 1rem"><i class="fas fa-globe"></i></div>
-        <h4 style="font-size:1rem">Diseño Web</h4>
-      </a>
     </div>
   </div>
 </section>
@@ -154,9 +182,8 @@
     <div class="footer-bottom">
       <span>&copy; 2025 ArmyNet. Todos los derechos reservados.</span>
       <div class="social-links">
-        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://wa.me/56985111137" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/armynet.cl/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/56985111137" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
