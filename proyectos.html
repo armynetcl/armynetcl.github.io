@@ -9,6 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/x-icon" href="assets/ico/armynet_favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/ico/armynet_favicon_32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/armynet_apple_touch_icon.png">
+  <meta name="theme-color" content="#0b172d">
 </head>
 <body>
 
@@ -43,7 +48,7 @@
   <div class="container">
     <div class="grid-2 fade-up">
 
-      <!-- Proyecto 1 -->
+      <!-- Proyecto 1: Redes -->
       <div class="project-card">
         <div class="project-img" style="background:linear-gradient(135deg,#0a1a2e,#1a4a8e)">
           <i class="fas fa-network-wired"></i>
@@ -53,41 +58,63 @@
             <span class="ptag">Redes</span>
             <span class="ptag">Infraestructura</span>
           </div>
-          <h3>Red Corporativa para Empresa Mediana</h3>
-          <p>Diseño e implementación de infraestructura de red para empresa con 40 puntos de trabajo. Cableado estructurado Cat6, fibra óptica, Wi-Fi corporativo y segmentación de red mediante VLANs.</p>
+          <h3>Infraestructura de Red Corporativa</h3>
+          <p>Diseño, instalación y certificación de red corporativa para empresa del sector salud. Cableado estructurado Cat6, fibra óptica entre pisos, Wi-Fi corporativo segmentado por VLAN y rack documentado.</p>
           <ul class="project-results">
-            <li><i class="fas fa-check-circle"></i> 40 puntos de red certificados Cat6</li>
-            <li><i class="fas fa-check-circle"></i> Wi-Fi corporativo con cobertura total</li>
-            <li><i class="fas fa-check-circle"></i> Rack instalado y rotulado profesionalmente</li>
-            <li><i class="fas fa-check-circle"></i> Tiempo de entrega: 5 días hábiles</li>
+            <li><i class="fas fa-check-circle"></i> Cableado Cat6 certificado punto a punto</li>
+            <li><i class="fas fa-check-circle"></i> Fibra óptica monomodo entre niveles</li>
+            <li><i class="fas fa-check-circle"></i> Segmentación por VLANs (admin, datos, invitados)</li>
+            <li><i class="fas fa-check-circle"></i> Rack rotulado y documentado con planos</li>
           </ul>
           <a href="contacto.html" class="btn btn-primary btn-sm" style="margin-top:1.25rem">Quiero algo similar <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <!-- Proyecto 2 -->
+      <!-- Proyecto 2: Consultoría TI -->
       <div class="project-card">
-        <div class="project-img" style="background:linear-gradient(135deg,#1a3d1a,#2d6b3a)">
-          <i class="fas fa-shield-halved"></i>
+        <div class="project-img" style="background:linear-gradient(135deg,#0d2347,#1a3a6e)">
+          <i class="fas fa-server"></i>
         </div>
         <div class="project-body">
           <div class="project-tags">
-            <span class="ptag">Ciberseguridad</span>
-            <span class="ptag">Pentesting</span>
+            <span class="ptag">Consultoría TI</span>
+            <span class="ptag">SysAdmin</span>
           </div>
-          <h3>Auditoría de Ciberseguridad para Retail</h3>
-          <p>Evaluación completa de seguridad para cadena de retail con 3 sucursales. Pentesting de red interna, análisis de vulnerabilidades en sistemas POS, revisión de firewalls y capacitación al equipo.</p>
+          <h3>Consultoría TI para Empresa Corporativa</h3>
+          <p>Administración integral de infraestructura TI para empresa multinacional: gestión de sala de servidores, Active Directory, telefonía IP, CCTV interno, soporte técnico a usuarios y cumplimiento de SLA.</p>
           <ul class="project-results">
-            <li><i class="fas fa-check-circle"></i> 12 vulnerabilidades críticas identificadas y resueltas</li>
-            <li><i class="fas fa-check-circle"></i> Firewall configurado y hardening aplicado</li>
-            <li><i class="fas fa-check-circle"></i> Equipo de 15 personas capacitado</li>
-            <li><i class="fas fa-check-circle"></i> Informe técnico completo entregado</li>
+            <li><i class="fas fa-check-circle"></i> Active Directory y políticas de grupo configuradas</li>
+            <li><i class="fas fa-check-circle"></i> Sala de servidores organizada y monitoreada</li>
+            <li><i class="fas fa-check-circle"></i> Soporte técnico presencial con cumplimiento de SLA</li>
+            <li><i class="fas fa-check-circle"></i> Gestión de usuarios, accesos y Microsoft 365</li>
           </ul>
           <a href="contacto.html" class="btn btn-primary btn-sm" style="margin-top:1.25rem">Quiero algo similar <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <!-- Proyecto 3 -->
+      <!-- Proyecto 3: Auditoría -->
+      <div class="project-card">
+        <div class="project-img" style="background:linear-gradient(135deg,#1a3d1a,#2d6b3a)">
+          <i class="fas fa-magnifying-glass-chart"></i>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="ptag">Auditoría TI</span>
+            <span class="ptag">Diagnóstico</span>
+          </div>
+          <h3>Auditoría Tecnológica para Empresa</h3>
+          <p>Evaluación técnica integral de la infraestructura TI de una organización: revisión de red, seguridad perimetral, estado de equipos, servicios activos y cumplimiento de buenas prácticas. Entrega de informe con hallazgos y plan de acción.</p>
+          <ul class="project-results">
+            <li><i class="fas fa-check-circle"></i> Inventario y diagnóstico de equipos e infraestructura</li>
+            <li><i class="fas fa-check-circle"></i> Evaluación de red, firewall y superficie de ataque</li>
+            <li><i class="fas fa-check-circle"></i> Identificación de riesgos operativos y de seguridad</li>
+            <li><i class="fas fa-check-circle"></i> Informe técnico con recomendaciones priorizadas</li>
+          </ul>
+          <a href="contacto.html" class="btn btn-primary btn-sm" style="margin-top:1.25rem">Quiero algo similar <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Proyecto 4: CCTV + IoT -->
       <div class="project-card">
         <div class="project-img" style="background:linear-gradient(135deg,#3d1a1a,#7a3838)">
           <i class="fas fa-camera"></i>
@@ -96,21 +123,22 @@
           <div class="project-tags">
             <span class="ptag">CCTV</span>
             <span class="ptag">Domótica</span>
+            <span class="ptag">IoT</span>
           </div>
-          <h3>CCTV y Control de Acceso para Condominio Residencial</h3>
-          <p>Instalación de sistema de vigilancia para condominio residencial. 16 cámaras IP de alta resolución, grabación en NVR, acceso remoto para administración y sistema de control de acceso en portería.</p>
+          <h3>CCTV, Domótica e Integración IoT</h3>
+          <p>Instalación de sistemas de vigilancia y automatización para domicilios, PYMEs y oficinas. Cámaras IP con NVR/DVR, visualización remota desde app móvil, control de acceso y automatización con Tuya, Sonoff y Home Assistant.</p>
           <ul class="project-results">
-            <li><i class="fas fa-check-circle"></i> 16 cámaras IP instaladas y configuradas</li>
-            <li><i class="fas fa-check-circle"></i> Monitoreo remoto 24/7 vía app móvil</li>
-            <li><i class="fas fa-check-circle"></i> Control de acceso en 2 puntos de entrada</li>
-            <li><i class="fas fa-check-circle"></i> Capacitación a administración del edificio</li>
+            <li><i class="fas fa-check-circle"></i> Cámaras IP configuradas con grabación NVR/DVR</li>
+            <li><i class="fas fa-check-circle"></i> Monitoreo remoto 24/7 desde smartphone</li>
+            <li><i class="fas fa-check-circle"></i> Automatización IoT con Tuya / Sonoff Zigbee / Home Assistant</li>
+            <li><i class="fas fa-check-circle"></i> UPS instalado y cableado estructurado integrado</li>
           </ul>
           <a href="contacto.html" class="btn btn-primary btn-sm" style="margin-top:1.25rem">Quiero algo similar <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <!-- Proyecto 4 -->
-      <div class="project-card">
+      <!-- Proyecto 5: Audiovisual (ancho completo) -->
+      <div class="project-card" style="grid-column:1/-1">
         <div class="project-img" style="background:linear-gradient(135deg,#3d3a1a,#7a7038)">
           <i class="fas fa-video"></i>
         </div>
@@ -118,15 +146,15 @@
           <div class="project-tags">
             <span class="ptag">Audiovisual</span>
             <span class="ptag">Drone</span>
-            <span class="ptag">Web</span>
+            <span class="ptag">Redes Sociales</span>
           </div>
-          <h3>Campaña Audiovisual + Web para PYME</h3>
-          <p>Producción audiovisual completa y desarrollo web para empresa del rubro construcción. Video corporativo con drone, fotografías de proyectos y diseño de sitio web responsive con galería de obras.</p>
+          <h3>Producción Audiovisual Corporativa</h3>
+          <p>Producción audiovisual completa para empresas y PYMEs: video corporativo, fotografía profesional y contenido aéreo con drone. Equipamiento con filtros ND, estabilización gimbal e iluminación de estudio. Material optimizado para Instagram, LinkedIn y YouTube.</p>
           <ul class="project-results">
-            <li><i class="fas fa-check-circle"></i> Video corporativo de 2 min con tomas drone</li>
-            <li><i class="fas fa-check-circle"></i> 80+ fotografías profesionales de obras</li>
-            <li><i class="fas fa-check-circle"></i> Sitio web responsive lanzado en 15 días</li>
-            <li><i class="fas fa-check-circle"></i> Material adaptado para Instagram y LinkedIn</li>
+            <li><i class="fas fa-check-circle"></i> Video corporativo con tomas aéreas drone</li>
+            <li><i class="fas fa-check-circle"></i> Fotografía profesional con iluminación de estudio</li>
+            <li><i class="fas fa-check-circle"></i> Estabilización con gimbal y filtros ND en exteriores</li>
+            <li><i class="fas fa-check-circle"></i> Contenido adaptado para redes sociales y web</li>
           </ul>
           <a href="contacto.html" class="btn btn-primary btn-sm" style="margin-top:1.25rem">Quiero algo similar <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -201,6 +229,7 @@
       <span>&copy; 2026 ArmyNet. Todos los derechos reservados.</span>
       <div class="social-links">
         <a href="https://www.instagram.com/armynet.cl/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/armynet.cl" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20ArmyNet." target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
