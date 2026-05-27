@@ -1,5 +1,3 @@
-// ArmyNet SpA — script.js v3 — 2026
-
 // Navbar scroll effect
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -7,35 +5,35 @@ window.addEventListener('scroll', () => {
 });
 
 // Hamburger menu
-const ham      = document.querySelector('.hamburger');
+const ham = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 if (ham) ham.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// Close menu on link click
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Active nav link por página actual
+// Active nav link
 const currentPage = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(a => {
+document.querySelectorAll('.nav-links a').forEach(a => {
   const href = a.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    a.classList.add('active');
-  }
+  if (href === currentPage || (currentPage === '' && href === 'index.html')) a.classList.add('active');
 });
 
-// Fade-up on scroll (IntersectionObserver)
-const fadeObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
+// Fade-up on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Animated counters
+// Animated counters (hero stats)
 function animateCount(el) {
   const target = parseInt(el.dataset.count);
   const suffix = el.dataset.suffix || '';
-  let current  = 0;
-  const step   = Math.max(1, Math.ceil(target / 40));
-  const timer  = setInterval(() => {
+  let current = 0;
+  const step = Math.max(1, Math.ceil(target / 40));
+  const timer = setInterval(() => {
     current = Math.min(current + step, target);
     el.textContent = current + suffix;
     if (current >= target) clearInterval(timer);
@@ -51,37 +49,38 @@ const statsObserver = new IntersectionObserver(entries => {
 });
 document.querySelectorAll('.hero-stats').forEach(el => statsObserver.observe(el));
 
-// Contact form (Web3Forms — reemplazar access_key en el HTML)
+// Contact form (Web3Forms)
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  const status    = document.getElementById('formStatus');
+  const status = document.getElementById('formStatus');
   const submitBtn = contactForm.querySelector('button[type="submit"]');
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    status.className  = 'form-status';
+    status.className = 'form-status';
     status.textContent = '';
-    const originalHtml = submitBtn.innerHTML;
-    submitBtn.disabled  = true;
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
     try {
+      const formData = new FormData(contactForm);
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body:   new FormData(contactForm)
+        body: formData
       });
       const data = await response.json();
       if (data.success) {
-        status.className  = 'form-status success';
-        status.textContent = 'Solicitud enviada. Te respondemos en menos de 24h hábiles.';
+        status.className = 'form-status success';
+        status.textContent = '¡Mensaje enviado! Te responderemos en menos de 24h hábiles.';
         contactForm.reset();
       } else {
-        throw new Error(data.message || 'Error en el envío');
+        throw new Error(data.message || 'Error al enviar');
       }
     } catch (err) {
-      status.className  = 'form-status error';
-      status.textContent = 'Error al enviar. Escríbenos directamente a contacto@armynet.cl o por WhatsApp.';
+      status.className = 'form-status error';
+      status.textContent = 'Hubo un problema al enviar. Por favor escríbenos por WhatsApp o intenta nuevamente.';
     } finally {
-      submitBtn.disabled  = false;
-      submitBtn.innerHTML = originalHtml;
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
     }
   });
 }

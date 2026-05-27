@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Servicios TI de ArmyNet SpA: ciberseguridad, redes, CCTV, mantención, audiovisual y diseño web en Santiago, Chile.">
-  <title>Servicios | ArmyNet SpA</title>
-  <link rel="icon" type="image/x-icon" href="../v3/ICO/armynet_favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="../v3/ICO/armynet_favicon_32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../v3/ICO/armynet_apple_touch_icon.png">
-  <meta name="theme-color" content="#0b172d">
+  <meta name="description" content="Servicios TI de ArmyNet: Mantención, Redes, Ciberseguridad, CCTV, Armado PC, Audiovisual y Diseño Web en Santiago, Chile.">
+  <title>Servicios | ArmyNet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,174 +15,181 @@
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="../v3/SVG/03_armynet_icono.svg" alt="ArmyNet">
-      <span class="logo-text">ARMY<span>NET</span></span>
+      <img id="logoImg" src="armynet_icono.svg" alt="ArmyNet" style="height:48px;width:auto;">
+      <span>ARMY<span class="accent">NET</span></span>
     </a>
     <div class="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="servicios.html" class="active">Servicios</a>
+      <a href="servicios.html">Servicios</a>
       <a href="proyectos.html">Proyectos</a>
       <a href="contacto.html">Contacto</a>
-      <a href="contacto.html" class="nav-cta">Cotización</a>
+      <a href="contacto.html" class="nav-cta">Cotización gratis</a>
     </div>
     <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<a id="wa-float" href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" title="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+<a id="wa-float" href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n." target="_blank" title="Escríbenos"><i class="fab fa-whatsapp"></i></a>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
-    <div class="tag-label">Lo que hacemos</div>
-    <h1>Servicios <span class="accent">TI Profesionales</span></h1>
-    <p>Soluciones completas de infraestructura, seguridad y tecnología para empresas y PYMES. Cada servicio con garantía real.</p>
+    <div class="tag">Lo que hacemos</div>
+    <h1>Nuestros <span class="accent">Servicios</span></h1>
+    <p>Soluciones TI completas para tu empresa o PYME. Cotiza sin costo.</p>
   </div>
 </div>
 
-<div class="scan-line"></div>
-
-<!-- SERVICIOS DETALLADOS -->
+<!-- SERVICIOS -->
 <section>
   <div class="container">
 
-    <!-- Ciberseguridad -->
-    <div class="service-detail fade-up" id="ciberseguridad">
-      <div class="service-detail-header">
-        <div class="service-detail-icon"><i class="fas fa-shield-halved"></i></div>
-        <div>
-          <span class="card-tag">Ciberseguridad</span>
-          <h3>Protección y Auditoría de Seguridad</h3>
-          <span class="sub">Certificados en Hacking Ético Profesional y Fortinet NSE 1 &amp; 2</span>
-        </div>
-      </div>
-      <p style="color:var(--text);margin-bottom:1.25rem;">Identificamos vulnerabilidades antes que lo hagan los atacantes. Auditorías completas, análisis de redes y planes de remediación con documentación detallada.</p>
-      <ul class="service-bullets">
-        <li><i class="fas fa-check"></i> Pentesting interno y externo — pruebas de penetración controladas</li>
-        <li><i class="fas fa-check"></i> Análisis de vulnerabilidades en infraestructura y aplicaciones</li>
-        <li><i class="fas fa-check"></i> Auditoría de redes Wi-Fi y cableadas</li>
-        <li><i class="fas fa-check"></i> Hardening de servidores y estaciones de trabajo</li>
-        <li><i class="fas fa-check"></i> Configuración de firewalls y sistemas IDS/IPS</li>
-        <li><i class="fas fa-check"></i> Capacitación en seguridad para equipos</li>
-        <li><i class="fas fa-check"></i> Informe técnico y ejecutivo post-auditoría</li>
-      </ul>
-      <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar servicio <i class="fas fa-arrow-right"></i></a>
-    </div>
-
-    <!-- Redes -->
-    <div class="service-detail fade-up" id="redes">
-      <div class="service-detail-header">
-        <div class="service-detail-icon"><i class="fas fa-network-wired"></i></div>
-        <div>
-          <span class="card-tag">Redes e Infraestructura</span>
-          <h3>Diseño e Implementación de Redes</h3>
-          <span class="sub">Cableado estructurado · Wi-Fi corporativo · Switching · Routing</span>
-        </div>
-      </div>
-      <p style="color:var(--text);margin-bottom:1.25rem;">Diseñamos e implementamos la infraestructura de red que tu empresa necesita para operar con confiabilidad y escalar sin problemas.</p>
-      <ul class="service-bullets">
-        <li><i class="fas fa-check"></i> Cableado estructurado Cat6 / Cat6A y fibra óptica</li>
-        <li><i class="fas fa-check"></i> Diseño e instalación de Wi-Fi corporativo (Ubiquiti, Cisco, TP-Link Enterprise)</li>
-        <li><i class="fas fa-check"></i> Configuración de switches gestionados y VLANs</li>
-        <li><i class="fas fa-check"></i> Instalación y certificación de rack de comunicaciones</li>
-        <li><i class="fas fa-check"></i> Configuración de routers, firewall y gestión de accesos</li>
-        <li><i class="fas fa-check"></i> Redes en proyectos habitacionales, oficinas y bodegas</li>
-        <li><i class="fas fa-check"></i> Diagnóstico y optimización de redes existentes</li>
-      </ul>
-      <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar servicio <i class="fas fa-arrow-right"></i></a>
-    </div>
-
-    <!-- CCTV -->
-    <div class="service-detail fade-up" id="cctv">
-      <div class="service-detail-header">
-        <div class="service-detail-icon"><i class="fas fa-camera"></i></div>
-        <div>
-          <span class="card-tag">CCTV & Domótica</span>
-          <h3>Seguridad Física e Inmótica</h3>
-          <span class="sub">Cámaras IP · Alarmas · Automatización · Control remoto</span>
-        </div>
-      </div>
-      <p style="color:var(--text);margin-bottom:1.25rem;">Sistemas de vigilancia y automatización para hogares, oficinas, bodegas y proyectos industriales. Monitoreo 24/7 desde cualquier dispositivo.</p>
-      <ul class="service-bullets">
-        <li><i class="fas fa-check"></i> Instalación de cámaras IP 2K/4K — exterior e interior</li>
-        <li><i class="fas fa-check"></i> NVR/DVR con almacenamiento local y en la nube</li>
-        <li><i class="fas fa-check"></i> Sistemas de alarma perimetral con sensores de movimiento e incendio</li>
-        <li><i class="fas fa-check"></i> Control de acceso (llaves digitales, biometría, proximidad)</li>
-        <li><i class="fas fa-check"></i> Domótica: automatización de iluminación, climatización y puertas</li>
-        <li><i class="fas fa-check"></i> Proyectos CCTV perimetral para bodegas e industria</li>
-        <li><i class="fas fa-check"></i> App móvil de monitoreo y alertas en tiempo real</li>
-      </ul>
-      <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar servicio <i class="fas fa-arrow-right"></i></a>
-    </div>
-
-    <!-- Mantención TI -->
+    <!-- 1. Mantención -->
     <div class="service-detail fade-up" id="mantencion">
       <div class="service-detail-header">
         <div class="service-detail-icon"><i class="fas fa-tools"></i></div>
         <div>
-          <span class="card-tag">Mantención TI</span>
-          <h3>Soporte y Mantención Técnica</h3>
-          <span class="sub">PC · Notebooks · Periféricos · Diagnóstico · Reparación</span>
+          <div class="tag" style="margin:0 0 .25rem">TI</div>
+          <h3>Mantención de Equipos</h3>
+          <div class="sub">Soluciones rápidas con respaldo técnico para tus dispositivos</div>
         </div>
       </div>
-      <p style="color:var(--text);margin-bottom:1.25rem;">Mantención preventiva y correctiva para garantizar la disponibilidad de tus equipos. Diagnóstico honesto y garantía real en cada intervención.</p>
       <ul class="service-bullets">
-        <li><i class="fas fa-check"></i> Diagnóstico de PC, notebook y celulares</li>
-        <li><i class="fas fa-check"></i> Reparación de hardware: pantallas, teclados, baterías, discos</li>
-        <li><i class="fas fa-check"></i> Limpieza interna, cambio de pasta térmica, optimización</li>
-        <li><i class="fas fa-check"></i> Instalación y configuración de Windows, macOS, Linux</li>
-        <li><i class="fas fa-check"></i> Migración de datos y recuperación de información</li>
-        <li><i class="fas fa-check"></i> Contratos de mantención preventiva para empresas</li>
-        <li><i class="fas fa-check"></i> Soporte remoto y presencial en Santiago</li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Diagnóstico HW y SW</strong> — Identificamos el problema con precisión antes de intervenir el equipo.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Reparación de PC, notebooks y celulares</strong> — Cambio de piezas, pantallas, teclados, baterías y más.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Formateo e instalación de sistemas</strong> — Windows, drivers, software licenciado y optimización.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Limpieza y mantención preventiva</strong> — Limpieza interna, cambio de pasta térmica, revisión de cooling.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Asesoría en accesorios</strong> — Te recomendamos lo que realmente necesitas según tu presupuesto.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Garantía según condiciones del servicio</strong> — Respaldamos nuestro trabajo con cobertura aplicable a cada tipo de reparación.</span></li>
       </ul>
-      <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar servicio <i class="fas fa-arrow-right"></i></a>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar cotización <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <!-- Audiovisual -->
+    <!-- 2. Redes -->
+    <div class="service-detail fade-up" id="redes">
+      <div class="service-detail-header">
+        <div class="service-detail-icon"><i class="fas fa-network-wired"></i></div>
+        <div>
+          <div class="tag" style="margin:0 0 .25rem">RED</div>
+          <h3>Redes e Infraestructura TI</h3>
+          <div class="sub">Diseño, instalación y certificación de infraestructura de red</div>
+        </div>
+      </div>
+      <ul class="service-bullets">
+        <li><i class="fas fa-chevron-right"></i><span><strong>Redes HFC y Fibra Óptica</strong> — Instalación, tendido y certificación de fibra óptica y redes coaxiales.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Cableado Estructurado Cat6</strong> — Certificación profesional con estándares internacionales.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Switches, Routers y Access Points</strong> — Configuración y puesta en marcha de equipamiento activo.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Racks y Gabinetes</strong> — Instalación ordenada y profesional de infraestructura pasiva.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Redes Wi-Fi corporativas</strong> — Diseño de cobertura y configuración de redes inalámbricas seguras.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Supervisión de proyectos</strong> — Coordinación y liderazgo técnico en proyectos de renovación tecnológica.</span></li>
+      </ul>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar cotización <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 3. Ciberseguridad -->
+    <div class="service-detail fade-up" id="ciberseguridad">
+      <div class="service-detail-header">
+        <div class="service-detail-icon"><i class="fas fa-shield-halved"></i></div>
+        <div>
+          <div class="tag" style="margin:0 0 .25rem">SEC</div>
+          <h3>Ciberseguridad</h3>
+          <div class="sub">Protege tu empresa con servicios de seguridad profesional certificada</div>
+        </div>
+      </div>
+      <ul class="service-bullets">
+        <li><i class="fas fa-chevron-right"></i><span><strong>Pentesting (Pruebas de Penetración)</strong> — Simulamos ataques reales para detectar vulnerabilidades antes que los hackers.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Análisis de vulnerabilidades</strong> — Evaluación completa de la seguridad de tu red, equipos y sistemas.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Revisión de configuraciones de red</strong> — Auditamos firewalls, routers y switches para detectar brechas.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Capacitación en seguridad</strong> — Formamos a tu equipo para reconocer phishing, ingeniería social y amenazas.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Cifrado de datos y backups</strong> — Implementamos soluciones de respaldo seguro y cifrado de información crítica.</span></li>
+      </ul>
+      <div class="cert-badges" style="justify-content:flex-start;margin:1rem 0 1.5rem">
+        <div class="cert-badge" style="font-size:.85rem;padding:.7rem 1.2rem"><i class="fas fa-user-secret"></i> Hacking Ético Profesional</div>
+        <div class="cert-badge" style="font-size:.85rem;padding:.7rem 1.2rem"><i class="fas fa-fire-flame-curved"></i> Fortinet NSE 1 &amp; 2</div>
+      </div>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar evaluación <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 4. CCTV -->
+    <div class="service-detail fade-up" id="cctv">
+      <div class="service-detail-header">
+        <div class="service-detail-icon"><i class="fas fa-camera"></i></div>
+        <div>
+          <div class="tag" style="margin:0 0 .25rem">DOM</div>
+          <h3>CCTV, Alarmas y Domótica</h3>
+          <div class="sub">Seguridad y automatización del hogar o negocio — Santiago y regiones</div>
+        </div>
+      </div>
+      <ul class="service-bullets">
+        <li><i class="fas fa-chevron-right"></i><span><strong>Instalación de CCTV</strong> — Cámaras IP y analógicas para hogares y empresas. Configuración remota.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Sistemas de Alarmas</strong> — Alarmas perimetrales, de movimiento y pánico con monitoreo local o remoto.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Domótica y Automatización</strong> — Control inteligente de luces, persianas, climatización y accesos desde tu smartphone.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Monitoreo Remoto</strong> — Acceso y supervisión de cámaras y alarmas desde cualquier lugar vía app.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Proyectos en Regiones</strong> — Experiencia en instalaciones fuera de Santiago, coordinando proyectos en terreno.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Mantención y Soporte</strong> — Revisión periódica, actualización de firmware y soporte técnico post-instalación.</span></li>
+      </ul>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar cotización <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 5. Armado PC -->
+    <div class="service-detail fade-up" id="pc">
+      <div class="service-detail-header">
+        <div class="service-detail-icon"><i class="fas fa-microchip"></i></div>
+        <div>
+          <div class="tag" style="margin:0 0 .25rem">PC</div>
+          <h3>Armado y Venta de Computadores</h3>
+          <div class="sub">Tu PC ideal, diseñada según tus necesidades y presupuesto</div>
+        </div>
+      </div>
+      <ul class="service-bullets">
+        <li><i class="fas fa-chevron-right"></i><span><strong>Análisis de necesidades</strong> — ¿Para qué usarás el equipo? Gaming, trabajo, diseño, oficina…</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Selección de componentes</strong> — Elegimos las piezas con la mejor relación calidad/precio del mercado.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Ensamble profesional</strong> — Armamos el equipo con los cuidados necesarios para su correcto funcionamiento.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Instalación y configuración</strong> — Sistema operativo, drivers, software y optimización lista para usar.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Soporte post-venta</strong> — Acompañamiento técnico luego de la entrega, con garantía según condiciones del servicio.</span></li>
+      </ul>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar cotización <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 6. Audiovisual -->
     <div class="service-detail fade-up" id="audiovisual">
       <div class="service-detail-header">
         <div class="service-detail-icon"><i class="fas fa-video"></i></div>
         <div>
-          <span class="card-tag">Audiovisual & Drone</span>
-          <h3>Producción Audiovisual Corporativa</h3>
-          <span class="sub">Video comercial · Fotografía · Tomas aéreas con drone</span>
+          <div class="tag" style="margin:0 0 .25rem">CAM</div>
+          <h3>Contenido Audiovisual Profesional</h3>
+          <div class="sub">Fotografía y video de calidad para tu empresa o PYME</div>
         </div>
       </div>
-      <p style="color:var(--text);margin-bottom:1.25rem;">Producción audiovisual completa para tu empresa. Desde videos corporativos hasta tomas aéreas profesionales con drone DJI.</p>
       <ul class="service-bullets">
-        <li><i class="fas fa-check"></i> Videos comerciales y corporativos para web y RRSS</li>
-        <li><i class="fas fa-check"></i> Fotografía profesional de productos, instalaciones y equipo</li>
-        <li><i class="fas fa-check"></i> Tomas aéreas con drone DJI Mini 4 Pro — videos 4K</li>
-        <li><i class="fas fa-check"></i> Edición y postproducción completa</li>
-        <li><i class="fas fa-check"></i> Contenido para proyectos inmobiliarios</li>
-        <li><i class="fas fa-check"></i> Material para redes sociales (Reels, Stories, YouTube)</li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Videos Comerciales para RRSS</strong> — Producción completa: grabación, edición y entrega lista para publicar.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Fotografía Profesional</strong> — Fotos de productos, instalaciones o eventos con equipo de alto nivel.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Tomas Aéreas con Drone</strong> — Perspectivas únicas de tu negocio o instalaciones con drone de alta especificación.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Material para Páginas Web</strong> — Imágenes y videos optimizados para uso en sitios web corporativos.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Edición y Post-producción</strong> — Edición profesional con corrección de color, sonido y motion graphics.</span></li>
       </ul>
-      <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar servicio <i class="fas fa-arrow-right"></i></a>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar cotización <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <!-- Diseño Web -->
+    <!-- 7. Diseño Web -->
     <div class="service-detail fade-up" id="web">
       <div class="service-detail-header">
         <div class="service-detail-icon"><i class="fas fa-globe"></i></div>
         <div>
-          <span class="card-tag">Diseño Web</span>
-          <h3>Presencia Digital Profesional</h3>
-          <span class="sub">Sitios web · Landing pages · E-commerce · Material digital</span>
+          <div class="tag" style="margin:0 0 .25rem">WEB</div>
+          <h3>Diseño Web y Presencia Digital</h3>
+          <div class="sub">Tu negocio en internet con diseño profesional y funcional</div>
         </div>
       </div>
-      <p style="color:var(--text);margin-bottom:1.25rem;">Sitios web modernos, rápidos y orientados a convertir visitas en clientes. Diseño responsive, hosting y dominio incluidos en proyectos.</p>
       <ul class="service-bullets">
-        <li><i class="fas fa-check"></i> Sitios web corporativos con diseño personalizado</li>
-        <li><i class="fas fa-check"></i> Landing pages de alta conversión</li>
-        <li><i class="fas fa-check"></i> Configuración de correo corporativo (Microsoft 365 / Google Workspace)</li>
-        <li><i class="fas fa-check"></i> Hosting, dominio .cl y gestión DNS</li>
-        <li><i class="fas fa-check"></i> SEO básico y optimización de velocidad</li>
-        <li><i class="fas fa-check"></i> Material gráfico para redes sociales</li>
-        <li><i class="fas fa-check"></i> Mantenimiento y actualizaciones post-entrega</li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Sitios Web Corporativos</strong> — Diseño personalizado, responsive y adaptado a la identidad de tu marca.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Landing Pages</strong> — Páginas de aterrizaje enfocadas en convertir visitas en clientes.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Material para Redes Sociales</strong> — Banners, flyers, stories y publicaciones para tus RRSS.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Integración Audiovisual</strong> — Incorporamos los videos y fotos producidos directamente en tu sitio.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Actualizaciones y Mantención Web</strong> — Mantenemos tu sitio actualizado, seguro y funcionando siempre.</span></li>
+        <li><i class="fas fa-chevron-right"></i><span><strong>Asesoría en Identidad Digital</strong> — Te orientamos para proyectar una imagen profesional y coherente en internet.</span></li>
       </ul>
-      <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar servicio <i class="fas fa-arrow-right"></i></a>
+      <a href="contacto.html" class="btn btn-primary btn-sm">Solicitar cotización <i class="fas fa-arrow-right"></i></a>
     </div>
 
   </div>
@@ -195,53 +198,46 @@
 <!-- CTA -->
 <section class="cta-band">
   <div class="container fade-up">
-    <h2>¿Tienes un <span class="accent">proyecto en mente</span>?</h2>
-    <p>Cuéntanos lo que necesitas y te enviamos una cotización detallada sin costo en 24h.</p>
+    <h2>¿No encuentras lo que <span class="accent">necesitas</span>?</h2>
+    <p>Escríbenos y evaluamos tu caso sin costo. Tenemos soluciones para cada necesidad.</p>
     <div class="btns">
-      <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20cotizar%20un%20servicio." target="_blank" class="btn btn-wa btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="contacto.html" class="btn btn-outline btn-lg">Formulario de contacto</a>
+      <a href="contacto.html" class="btn btn-primary btn-lg">Contáctanos <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="footer-logo">
-          <img src="../v3/SVG/03_armynet_icono.svg" alt="ArmyNet">
-          <span class="logo-text">ARMY<span>NET</span></span>
-        </div>
-        <p class="footer-desc">Infraestructura TI, ciberseguridad y soluciones digitales para empresas y PYMES en Santiago, Chile.</p>
+        <div class="footer-logo"><img src="armynet_icono.svg" alt="ArmyNet" style="height:40px;width:auto;"><span>ARMY<span class="accent">NET</span></span></div>
+        <p class="footer-desc">Soluciones TI integrales para empresas y PYMES. Tecnología que trabaja para ti.</p>
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="#ciberseguridad">Ciberseguridad</a></li>
-          <li><a href="#redes">Redes e Infraestructura</a></li>
-          <li><a href="#cctv">CCTV &amp; Domótica</a></li>
           <li><a href="#mantencion">Mantención TI</a></li>
-          <li><a href="#audiovisual">Audiovisual &amp; Drone</a></li>
+          <li><a href="#redes">Redes</a></li>
+          <li><a href="#ciberseguridad">Ciberseguridad</a></li>
+          <li><a href="#cctv">CCTV &amp; Domótica</a></li>
+          <li><a href="#audiovisual">Audiovisual</a></li>
           <li><a href="#web">Diseño Web</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="https://wa.me/56985111137" target="_blank"><i class="fab fa-whatsapp"></i> +56 9 8511 1137</a></li>
+          <li><a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20ArmyNet." target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
           <li><a href="mailto:contacto@armynet.cl"><i class="fas fa-envelope"></i> contacto@armynet.cl</a></li>
-          <li><a><i class="fas fa-location-dot"></i> Puente Alto, Santiago</a></li>
-          <li><a><i class="fas fa-id-card"></i> RUT 78.421.642-K</a></li>
+          <li><a><i class="fas fa-location-dot"></i> Santiago, Chile</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 ArmyNet SpA · RUT 78.421.642-K · Todos los derechos reservados.</span>
+      <span>&copy; 2026 ArmyNet. Todos los derechos reservados.</span>
       <div class="social-links">
         <a href="https://www.instagram.com/armynet.cl/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/56985111137" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:contacto@armynet.cl" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/56985111137?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20ArmyNet." target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
