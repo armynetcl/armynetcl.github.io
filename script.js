@@ -16,7 +16,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 
 // Active nav link
 const currentPage = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(a => {
+document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(a => {
   const href = a.getAttribute('href');
   if (href === currentPage || (currentPage === '' && href === 'index.html')) a.classList.add('active');
 });
@@ -83,4 +83,45 @@ if (contactForm) {
       submitBtn.innerHTML = originalText;
     }
   });
+}
+
+
+// WhatsApp floating tooltip: aparece una vez tras 3s, se oculta sola a los 6s
+const waFloat = document.getElementById('wa-float');
+if (waFloat) {
+  const shownKey = 'armynet_wa_tooltip_shown';
+  setTimeout(() => {
+    if (!sessionStorage.getItem(shownKey)) {
+      waFloat.classList.add('show-tooltip');
+      sessionStorage.setItem(shownKey, '1');
+      setTimeout(() => waFloat.classList.remove('show-tooltip'), 6000);
+    }
+  }, 3000);
+}
+
+// Render de artículos del blog a partir de posts.js (window.ARMYNET_POSTS)
+if (typeof window.ARMYNET_POSTS !== 'undefined') {
+  const blogList = document.getElementById('blogList');
+  if (blogList) {
+    blogList.innerHTML = window.ARMYNET_POSTS.map(post => `
+      <article class="blog-card" id="${post.id}">
+        <div class="blog-card-icon"><i class="fas ${post.icon}"></i></div>
+        <div class="blog-meta"><span class="ptag">${post.tag}</span><span class="blog-date">Guía práctica</span></div>
+        <h2>${post.title}</h2>
+        ${post.paragraphs.map(p => `<p>${p}</p>`).join('')}
+        <a href="${post.ctaHref}" class="btn btn-primary btn-sm">${post.ctaText} <i class="fas fa-arrow-right"></i></a>
+      </article>
+    `).join('');
+  }
+
+  const blogTeasers = document.getElementById('blogTeasers');
+  if (blogTeasers) {
+    blogTeasers.innerHTML = window.ARMYNET_POSTS.slice(0, 3).map(post => `
+      <a href="blog.html#${post.id}" class="blog-teaser-card">
+        <i class="fas ${post.icon}"></i>
+        <h4>${post.title}</h4>
+        <span>Leer más <i class="fas fa-arrow-right"></i></span>
+      </a>
+    `).join('');
+  }
 }
