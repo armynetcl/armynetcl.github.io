@@ -553,6 +553,179 @@ footer {
   transform:translateY(-3px); box-shadow:var(--glow);
 }
 
+/* =========================================================================
+   PAGINAS INTERIORES  (contacto · servicios · proyectos · blog)
+   Estas clases existian en el HTML pero se quedaron sin estilo al reescribir
+   el CSS mirando solo index.html. De ahi los textos pegados y superpuestos.
+   ========================================================================= */
+
+/* ---- Cabecera de pagina interior -------------------------------------- */
+/* El navbar es fixed: sin este padding-top el .tag se mete bajo el logo. */
+.page-hero {
+  position:relative;
+  padding-block:clamp(9rem,15vw,11.5rem) clamp(3rem,6vw,4.5rem);
+  border-bottom:1px solid var(--stroke);
+  background:linear-gradient(180deg, rgba(11,23,45,.85), transparent);
+}
+.page-hero h1 { font-size:clamp(2.5rem,6vw,4.25rem); margin-bottom:1.15rem; }
+.page-hero p  { font-size:1.075rem; max-width:42rem; }
+
+/* Subtitulo generico bajo un h3 */
+.sub { font-size:.95rem; color:var(--fg-2); margin-top:.35rem; line-height:1.55; }
+
+.grid-2 { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr)); }
+
+/* ---- CONTACTO --------------------------------------------------------- */
+.contact-form-wrapper {
+  background:var(--surface); border:1px solid var(--stroke);
+  border-radius:var(--r-lg); padding:clamp(1.75rem,4vw,2.5rem);
+  backdrop-filter:blur(10px);
+}
+.contact-form-wrapper h3 { margin-bottom:.6rem; }
+.form-sub { font-size:.94rem; margin-bottom:2rem; }
+
+.form-row { display:grid; gap:1.15rem; grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr)); }
+.form-submit { width:100%; margin-top:.75rem; }
+.form-note   { font-size:.82rem; color:var(--fg-3); margin-top:1rem; text-align:center; line-height:1.6; }
+.form-status { margin-top:1rem; font-size:.9rem; font-weight:600; text-align:center; min-height:1.25rem; }
+.form-status.ok  { color:var(--ok);  }
+.form-status.err { color:var(--err); }
+
+.contact-card {
+  background:var(--surface); border:1px solid var(--stroke);
+  border-radius:var(--r-lg); padding:1.75rem; backdrop-filter:blur(10px);
+  transition:transform var(--t), border-color var(--t), box-shadow var(--t);
+}
+.contact-card:hover { transform:translateY(-4px); border-color:var(--stroke-str); box-shadow:var(--sh-lg); }
+.contact-card h4 { margin-bottom:.15rem; }
+.contact-card p  { font-size:.92rem; }
+
+.contact-icon {
+  width:50px; height:50px; flex:0 0 auto; border-radius:14px;
+  display:grid; place-items:center; font-size:1.4rem; color:#fff;
+}
+.wa-icon   { background:linear-gradient(140deg,#25D366,#128C7E); box-shadow:0 8px 24px -10px rgba(37,211,102,.7); }
+.mail-icon { background:linear-gradient(140deg,var(--cyan),var(--blue)); color:#03121B; box-shadow:0 8px 24px -10px rgba(12,241,249,.7); }
+
+/* Franja de datos. El bug: <i> y <div> se apilaban y <span>/<strong> quedaban
+   pegados ("UbicacionSantiago, Chile"). Ahora el icono va al lado y la
+   etiqueta sobre el valor, cada uno en su linea. */
+.contact-info-strip {
+  display:grid; gap:1.25rem; margin-top:3rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));
+  padding:1.75rem; border-radius:var(--r-lg);
+  background:var(--surface); border:1px solid var(--stroke);
+}
+.info-item { display:flex; align-items:flex-start; gap:.9rem; }
+.info-item > i {
+  flex:0 0 auto; width:2.25rem; height:2.25rem; border-radius:10px;
+  display:grid; place-items:center; font-size:.95rem; color:var(--cyan);
+  background:rgba(12,241,249,.10); border:1px solid rgba(12,241,249,.2);
+}
+.info-item > div    { display:flex; flex-direction:column; gap:.2rem; min-width:0; }
+.info-item span     { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); font-weight:600; }
+.info-item strong   { font-size:.95rem; color:var(--fg); font-weight:600; line-height:1.45; }
+
+/* ---- SERVICIOS -------------------------------------------------------- */
+.service-detail {
+  background:var(--surface); border:1px solid var(--stroke);
+  border-radius:var(--r-lg); padding:clamp(1.75rem,3.5vw,2.5rem);
+  backdrop-filter:blur(10px); scroll-margin-top:6rem;
+  transition:border-color var(--t), box-shadow var(--t);
+}
+.service-detail:hover { border-color:var(--stroke-str); box-shadow:var(--sh-lg); }
+.service-detail-header { display:flex; align-items:flex-start; gap:1.25rem; margin-bottom:1.75rem; }
+.service-detail-icon {
+  flex:0 0 auto; width:3.4rem; height:3.4rem; border-radius:var(--r);
+  display:grid; place-items:center; font-size:1.35rem; color:var(--cyan);
+  background:linear-gradient(140deg, rgba(12,241,249,.16), rgba(10,102,194,.10));
+  border:1px solid rgba(12,241,249,.24);
+}
+.service-detail-header h3 { margin-bottom:.15rem; }
+
+.service-bullets { display:flex; flex-direction:column; gap:.95rem; margin-bottom:1.75rem; }
+.service-bullets li { display:flex; align-items:flex-start; gap:.75rem; font-size:.94rem; color:var(--fg-2); line-height:1.65; }
+.service-bullets li i { flex:0 0 auto; color:var(--cyan); font-size:.7rem; margin-top:.5rem; }
+.service-bullets strong { color:var(--fg); font-weight:600; }
+
+.cert-badges { display:flex; flex-wrap:wrap; gap:.65rem; justify-content:center; }
+.cert-badge {
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-size:.85rem; font-weight:600; color:var(--cyan);
+  background:rgba(12,241,249,.07); border:1px solid rgba(12,241,249,.22);
+  padding:.7rem 1.2rem; border-radius:99px;
+}
+
+/* ---- PROYECTOS -------------------------------------------------------- */
+.project-card { overflow:hidden; display:flex; flex-direction:column; padding:0; }
+.project-img {
+  aspect-ratio:16/9; display:grid; place-items:center;
+  font-size:3rem; color:rgba(12,241,249,.55);
+  border-bottom:1px solid var(--stroke); position:relative;
+}
+.project-img::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(4,9,15,.6));
+}
+.project-img img { width:100%; height:100%; object-fit:cover; }
+.project-body { padding:1.75rem; display:flex; flex-direction:column; gap:.85rem; flex:1; }
+.project-tags { display:flex; flex-wrap:wrap; gap:.45rem; }
+.ptag {
+  font-family:var(--font-head); font-size:.68rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--cyan);
+  background:rgba(12,241,249,.09); border:1px solid rgba(12,241,249,.22);
+  padding:.32rem .7rem; border-radius:99px;
+}
+.project-body h3 { margin-bottom:.1rem; }
+.project-body p  { font-size:.93rem; }
+.project-results { display:flex; flex-direction:column; gap:.6rem; margin-top:.25rem; }
+.project-results li { display:flex; align-items:flex-start; gap:.6rem; font-size:.89rem; color:var(--fg-2); line-height:1.6; }
+.project-results li i { flex:0 0 auto; color:var(--ok); font-size:.85rem; margin-top:.28rem; }
+
+/* ---- BLOG ------------------------------------------------------------- */
+.blog-grid { display:flex; flex-direction:column; gap:2rem; }
+.blog-card {
+  background:var(--surface); border:1px solid var(--stroke);
+  border-radius:var(--r-lg); padding:clamp(1.75rem,4vw,2.75rem);
+  backdrop-filter:blur(10px); scroll-margin-top:6rem;
+  transition:border-color var(--t), box-shadow var(--t);
+}
+.blog-card:hover { border-color:var(--stroke-str); box-shadow:var(--sh-lg); }
+.blog-card-icon {
+  width:3rem; height:3rem; border-radius:14px; margin-bottom:1.25rem;
+  display:grid; place-items:center; font-size:1.2rem; color:var(--cyan);
+  background:rgba(12,241,249,.10); border:1px solid rgba(12,241,249,.22);
+}
+/* El bug: .ptag y .blog-date salian pegados ("RedesGuia practica"). */
+.blog-meta { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; margin-bottom:1.15rem; }
+.blog-date { font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); font-weight:600; }
+/* El bug: el h2 y los <p> no tenian margen y el texto se encimaba. */
+.blog-card h2 { font-size:clamp(1.6rem,3.2vw,2.25rem); margin-bottom:1.25rem; line-height:1.15; }
+.blog-card p  { font-size:1rem; line-height:1.8; margin-bottom:1.15rem; }
+.blog-card p:last-of-type { margin-bottom:1.75rem; }
+.blog-card strong { color:var(--fg); font-weight:600; }
+
+.blog-teaser-card {
+  display:flex; flex-direction:column; gap:.85rem; padding:1.75rem;
+  background:var(--surface); border:1px solid var(--stroke);
+  border-radius:var(--r-lg); backdrop-filter:blur(10px);
+  transition:transform var(--t), border-color var(--t), box-shadow var(--t);
+}
+.blog-teaser-card:hover { transform:translateY(-5px); border-color:var(--stroke-str); box-shadow:var(--sh-lg); }
+.blog-teaser-card > i { font-size:1.5rem; color:var(--cyan); }
+.blog-teaser-card h4 { font-size:1.05rem; line-height:1.4; flex:1; }
+.blog-teaser-card span {
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-size:.88rem; font-weight:600; color:var(--cyan);
+}
+.blog-teaser-card:hover span i { transform:translateX(4px); }
+.blog-teaser-card span i { transition:transform var(--t-fast); }
+
+@media (max-width:560px) {
+  .service-detail-header { flex-direction:column; gap:1rem; }
+  .contact-info-strip { padding:1.35rem; }
+}
+
 /* ===== REVELADO AL HACER SCROLL ======================================== */
 .fade-up, [data-reveal] {
   opacity:0; transform:translateY(28px);
