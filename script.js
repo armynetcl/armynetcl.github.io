@@ -7,11 +7,20 @@ window.addEventListener('scroll', () => {
 // Hamburger menu
 const ham = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-if (ham) ham.addEventListener('click', () => navLinks.classList.toggle('open'));
+if (ham) ham.addEventListener('click', () => {
+  const abierto = navLinks.classList.toggle('open');
+  ham.classList.toggle('open', abierto);
+  ham.setAttribute('aria-expanded', abierto);
+  document.body.style.overflow = abierto ? 'hidden' : '';
+});
 
 // Close menu on link click
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    if (ham) { ham.classList.remove('open'); ham.setAttribute('aria-expanded', 'false'); }
+    document.body.style.overflow = '';
+  });
 });
 
 // Active nav link
@@ -31,13 +40,20 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 function animateCount(el) {
   const target = parseInt(el.dataset.count);
   const suffix = el.dataset.suffix || '';
-  let current = 0;
-  const step = Math.max(1, Math.ceil(target / 40));
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = current + suffix;
-    if (current >= target) clearInterval(timer);
-  }, 40);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = target + suffix;
+    return;
+  }
+  const DUR = 1400;
+  const t0 = performance.now();
+  // easeOutExpo: arranca rapido y frena al final; se lee mejor que el paso lineal
+  const ease = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+  function tick(now) {
+    const t = Math.min((now - t0) / DUR, 1);
+    el.textContent = Math.round(target * ease(t)) + suffix;
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 }
 const statsObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
