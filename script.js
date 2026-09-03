@@ -141,3 +141,59 @@ if (typeof window.ARMYNET_POSTS !== 'undefined') {
     `).join('');
   }
 }
+/* ============================================================
+   Contenido real (contenido.js): testimonios, clientes y fotos.
+   Principio: si el arreglo esta vacio, la seccion se ELIMINA del
+   DOM. El sitio nunca muestra un testimonio de relleno ni un
+   hueco vacio que parezca error.
+   ============================================================ */
+(() => {
+  const quitar = (sel) => { const n = document.querySelector(sel); if (n) n.remove(); };
+  const esc = (s) => String(s).replace(/[&<>"']/g, c =>
+    ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+  /* --- Testimonios --- */
+  const t = window.ARMYNET_TESTIMONIOS;
+  const cajaT = document.getElementById('testimoniosGrid');
+  if (cajaT) {
+    if (!Array.isArray(t) || t.length === 0) {
+      quitar('#seccionTestimonios');
+    } else {
+      cajaT.innerHTML = t.map(x => `
+        <figure class="testimonial-card">
+          <i class="fas fa-quote-left quote-mark" aria-hidden="true"></i>
+          <blockquote>${esc(x.texto)}</blockquote>
+          <figcaption>
+            <span class="t-autor">${esc(x.autor)}</span>
+            <span class="t-cargo">${esc(x.cargo)}</span>
+            ${x.servicio || x.fecha ? `<span class="t-meta">${[x.servicio, x.fecha].filter(Boolean).map(esc).join(' · ')}</span>` : ''}
+          </figcaption>
+        </figure>`).join('');
+    }
+  }
+
+  /* --- Logos de clientes --- */
+  const c = window.ARMYNET_CLIENTES;
+  const cajaC = document.getElementById('clientesStrip');
+  if (cajaC) {
+    if (!Array.isArray(c) || c.length === 0) {
+      quitar('#seccionClientes');
+    } else {
+      cajaC.innerHTML = c.map(x =>
+        `<img src="${esc(x.logo)}" alt="${esc(x.nombre)}" loading="lazy" class="client-logo">`).join('');
+    }
+  }
+
+  /* --- Fotos de proyectos --- */
+  const f = window.ARMYNET_FOTOS;
+  if (f && typeof f === 'object') {
+    document.querySelectorAll('[data-proyecto]').forEach(card => {
+      const foto = f[card.dataset.proyecto];
+      const cont = card.querySelector('.project-img');
+      if (!foto || !cont) return;   // sin foto: se queda el icono, que ya se ve intencional
+      cont.classList.add('has-photo');
+      cont.innerHTML =
+        `<img src="${esc(foto.src)}" alt="${esc(foto.alt || '')}" loading="lazy" decoding="async">`;
+    });
+  }
+})();
