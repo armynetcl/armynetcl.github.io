@@ -849,3 +849,11 @@ footer {
   body::before, body::after, #hero-canvas, #wa-float, #navbar, #read-progress { display:none !important; }
   .fade-up, [data-reveal] { opacity:1 !important; transform:none !important; }
 }
+
+/* ── Logo 3D circular (septiembre 2026) ───────────────────────────────── */
+.logo-circle {
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  flex-shrink: 0;
+}
